@@ -13,9 +13,11 @@
 		27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD720CC8B2C0012E5FD /* FutureMind.xcdatamodeld */; };
 		27EE3DDB20CC8B2D0012E5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DDA20CC8B2D0012E5FD /* Assets.xcassets */; };
 		27EE3DDE20CC8B2D0012E5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DDC20CC8B2D0012E5FD /* LaunchScreen.storyboard */; };
+		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.release.xcconfig"; sourceTree = "<group>"; };
 		27EE3DCD20CC8B2C0012E5FD /* FutureMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27EE3DD220CC8B2C0012E5FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		27EE3DDA20CC8B2D0012E5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27EE3DDD20CC8B2D0012E5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27EE3DDF20CC8B2D0012E5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
+		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AFE727D5F4F13C16C7FEAAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */,
+				279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		268B28A27213BDEBAB4CA5B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		27EE3DC420CC8B2C0012E5FD = {
 			isa = PBXGroup;
 			children = (
 				27EE3DCF20CC8B2C0012E5FD /* FutureMind */,
 				27EE3DCE20CC8B2C0012E5FD /* Products */,
+				1AFE727D5F4F13C16C7FEAAC /* Pods */,
+				268B28A27213BDEBAB4CA5B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27EE3DE220CC8B2D0012E5FD /* Build configuration list for PBXNativeTarget "FutureMind" */;
 			buildPhases = (
+				668256F4971216A5DA2EB318 /* [CP] Check Pods Manifest.lock */,
 				27EE3DC920CC8B2C0012E5FD /* Sources */,
 				27EE3DCA20CC8B2C0012E5FD /* Frameworks */,
 				27EE3DCB20CC8B2C0012E5FD /* Resources */,
+				5E6177D7C24CC7AEAD8FBFEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E6177D7C24CC7AEAD8FBFEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		668256F4971216A5DA2EB318 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FutureMind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27EE3DC920CC8B2C0012E5FD /* Sources */ = {
@@ -282,6 +347,7 @@
 		};
 		27EE3DE320CC8B2D0012E5FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +366,7 @@
 		};
 		27EE3DE420CC8B2D0012E5FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
