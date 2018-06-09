@@ -15,6 +15,7 @@
 		27EE3DDE20CC8B2D0012E5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DDC20CC8B2D0012E5FD /* LaunchScreen.storyboard */; };
 		27EE3DE720CC949A0012E5FD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DE620CC949A0012E5FD /* Service.swift */; };
 		27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */; };
+		27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */; };
 		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		27EE3DDF20CC8B2D0012E5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27EE3DE620CC949A0012E5FD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataResponse.swift; sourceTree = "<group>"; };
+		27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionManager.swift; sourceTree = "<group>"; };
 		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 		27EE3DE520CC94820012E5FD /* API */ = {
 			isa = PBXGroup;
 			children = (
+				27EE3DEB20CC9BC00012E5FD /* Core */,
 				27EE3DE620CC949A0012E5FD /* Service.swift */,
 				27EE3DE820CC95BA0012E5FD /* Response */,
 			);
@@ -111,6 +114,14 @@
 				27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		27EE3DEB20CC9BC00012E5FD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				27EE3DD320CC8B2C0012E5FD /* ViewController.swift in Sources */,
 				27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */,
 				27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */,
+				27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

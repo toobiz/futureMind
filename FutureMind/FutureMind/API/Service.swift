@@ -12,3 +12,12 @@ protocol Service {
     
     func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
 }
+
+extension APISessionManager: Service {
+    
+    func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
+        return request(baseUrl, method: .get, encoding: JSONEncoding.default)
+    }
+    
+    
+}
