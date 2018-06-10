@@ -7,4 +7,5 @@ target 'FutureMind' do
 	pod 'ObjectMapper', '~> 3.2'
 	pod 'RxSwift',    '~> 4.0'
     	pod 'RxCocoa',    '~> 4.0'
+	pod 'Swinject', '~> 1.1.4'
 end
