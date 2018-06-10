@@ -25,6 +25,7 @@ class Item: ImmutableMappable {
     let orderId: Int?
     let modificationDate: String?
     let imageUrl: String?
+    var image: UIImage?
     
     required init(map: Map) throws {
         title = try? map.value("title")
@@ -32,5 +33,6 @@ class Item: ImmutableMappable {
         orderId = try? map.value("orderId")
         modificationDate = try? map.value("modificationDate")
         imageUrl = try? map.value("image_url")
+        image = try? map.value("image")
     }
 }

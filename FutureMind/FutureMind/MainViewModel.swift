@@ -13,6 +13,7 @@ class MainViewModel {
     
     var repository: APIRepositoryInterface
     let disposeBag = DisposeBag()
+    var items: [Item]?
     
     init(repository: APIRepositoryInterface) {
         self.repository = repository
@@ -20,7 +21,14 @@ class MainViewModel {
     
     func getData() {
         repository.getData().subscribe(onNext: { [unowned self] response in
-            print(response)
+            for item in response.itemsList! {
+                    self.repository.getImage(imageUrl: item.imageUrl!).subscribe(onNext: { image in
+                        item.image = image
+                        self.items = response.itemsList
+                    }, onError: { error in
+                        
+                    }).disposed(by: self.disposeBag)
+            }
             }, onError: { [unowned self] error in
                 
         }).disposed(by: disposeBag)

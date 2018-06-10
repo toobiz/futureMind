@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - AlamofireNetworkActivityLogger (2.3.0):
     - Alamofire (~> 4.6)
   - AlamofireObjectMapper (5.0.0):
@@ -15,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.3)
   - AlamofireNetworkActivityLogger (~> 2.0)
   - AlamofireObjectMapper (~> 5.0)
   - ObjectMapper (~> 3.2)
@@ -26,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - AlamofireNetworkActivityLogger
     - AlamofireObjectMapper
     - ObjectMapper
@@ -36,6 +40,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   AlamofireNetworkActivityLogger: 6f3076652ab7fa6c819b59be08ea038d339e36d8
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
@@ -44,6 +49,6 @@ SPEC CHECKSUMS:
   Swinject: afea49fd95f392b41171669f165842879c48fad6
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: 92d4625f7ca86856d200758792824bfb0d0adaff
+PODFILE CHECKSUM: 8c39ec14d43477875b8f2779f80bc0809c99890d
 
 COCOAPODS: 1.5.3

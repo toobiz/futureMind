@@ -11,4 +11,5 @@ import RxSwift
 
 protocol APIRepositoryInterface {
     func getData() -> Observable<GetDataResponse>
+    func getImage(imageUrl: String) -> Observable<UIImage>
 }
