@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */; };
-		27EE3DD320CC8B2C0012E5FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD220CC8B2C0012E5FD /* ViewController.swift */; };
+		27EE3DD320CC8B2C0012E5FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */; };
 		27EE3DD620CC8B2C0012E5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DD420CC8B2C0012E5FD /* Main.storyboard */; };
 		27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD720CC8B2C0012E5FD /* FutureMind.xcdatamodeld */; };
 		27EE3DDB20CC8B2D0012E5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DDA20CC8B2D0012E5FD /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */; };
 		27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */; };
 		27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */; };
+		27EE3DF420CCA5FA0012E5FD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */; };
 		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +26,7 @@
 		279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.release.xcconfig"; sourceTree = "<group>"; };
 		27EE3DCD20CC8B2C0012E5FD /* FutureMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27EE3DD220CC8B2C0012E5FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		27EE3DD520CC8B2C0012E5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27EE3DD820CC8B2C0012E5FD /* FutureMind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FutureMind.xcdatamodel; sourceTree = "<group>"; };
 		27EE3DDA20CC8B2D0012E5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionManager.swift; sourceTree = "<group>"; };
 		27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryInterface.swift; sourceTree = "<group>"; };
+		27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,7 +95,8 @@
 				27EE3DE520CC94820012E5FD /* API */,
 				27EE3DEE20CC9E810012E5FD /* Repository */,
 				27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */,
-				27EE3DD220CC8B2C0012E5FD /* ViewController.swift */,
+				27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */,
+				27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */,
 				27EE3DD420CC8B2C0012E5FD /* Main.storyboard */,
 				27EE3DDA20CC8B2D0012E5FD /* Assets.xcassets */,
 				27EE3DDC20CC8B2D0012E5FD /* LaunchScreen.storyboard */,
@@ -259,11 +262,12 @@
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,
 				27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */,
-				27EE3DD320CC8B2C0012E5FD /* ViewController.swift in Sources */,
+				27EE3DD320CC8B2C0012E5FD /* MainViewController.swift in Sources */,
 				27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */,
 				27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */,
 				27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */,
 				27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */,
+				27EE3DF420CCA5FA0012E5FD /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
