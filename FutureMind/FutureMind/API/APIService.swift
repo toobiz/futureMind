@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  APIService.swift
 //  FutureMind
 //
 //  Created by Michal Tubis on 10.06.2018.
@@ -8,12 +8,12 @@
 
 import Alamofire
 
-protocol Service {
+protocol APIService {
     
     func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
 }
 
-extension APISessionManager: Service {
+extension APISessionManager: APIService {
     
     func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
         return request(baseUrl, method: .get, encoding: JSONEncoding.default)
