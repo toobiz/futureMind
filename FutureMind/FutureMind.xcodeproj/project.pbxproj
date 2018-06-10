@@ -17,6 +17,7 @@
 		27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */; };
 		27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */; };
 		27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */; };
+		27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */; };
 		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataResponse.swift; sourceTree = "<group>"; };
 		27EE3DEC20CC9BD90012E5FD /* APISessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionManager.swift; sourceTree = "<group>"; };
 		27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryInterface.swift; sourceTree = "<group>"; };
 		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */,
+				27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,
+				27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */,
 				27EE3DD320CC8B2C0012E5FD /* ViewController.swift in Sources */,
 				27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */,
 				27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */,

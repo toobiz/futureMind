@@ -10,12 +10,12 @@ import Alamofire
 
 protocol APIService {
     
-    func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
+    @discardableResult func getData(_ completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
 }
 
 extension APISessionManager: APIService {
     
-    func getData(completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
+    @discardableResult func getData(_ completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
         return request(baseUrl, method: .get, encoding: JSONEncoding.default)
     }
     
