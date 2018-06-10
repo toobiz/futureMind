@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import RxSwift
 
 class MainViewController: UIViewController {
     
     var viewModel: MainViewModel!
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getData()
+        setupBindings()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupBindings() {
+        viewModel.loadingSuccess.subscribe(onNext: { [weak self] _ in
+            print("Loading success")
+        }).disposed(by: disposeBag)
     }
-
 
 }
 

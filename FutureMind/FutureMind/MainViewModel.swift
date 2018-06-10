@@ -14,6 +14,7 @@ class MainViewModel {
     var repository: APIRepositoryInterface
     let disposeBag = DisposeBag()
     var items: [Item]?
+    let loadingSuccess = PublishSubject<Bool>()
     
     init(repository: APIRepositoryInterface) {
         self.repository = repository
@@ -21,10 +22,15 @@ class MainViewModel {
     
     func getData() {
         repository.getData().subscribe(onNext: { [unowned self] response in
+            var count = Int()
             for item in response.itemsList! {
                     self.repository.getImage(imageUrl: item.imageUrl!).subscribe(onNext: { image in
                         item.image = image
-                        self.items = response.itemsList
+                        count += 1
+                        if count == response.itemsList?.count {
+                            self.items = response.itemsList
+                            self.loadingSuccess.onNext(true)
+                        }
                     }, onError: { error in
                         
                     }).disposed(by: self.disposeBag)
