@@ -8,15 +8,20 @@
 
 import UIKit
 import CoreData
+import Swinject
+import SwinjectStoryboard
+import AlamofireNetworkActivityLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        NetworkActivityLogger.shared.startLogging()
+        
+        
         return true
     }
 
@@ -89,5 +94,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension SwinjectStoryboard {
+    @objc public static func setup() {
+        MainAssembly().assemble(container: SwinjectStoryboard.defaultContainer)
+        defaultContainer.register(APISessionManager.self) { _ in
+            return APISessionManager()
+        }
+    }
 }
 

@@ -12,4 +12,12 @@ import Alamofire
 class APISessionManager: SessionManager {
     
     let baseUrl: String = "http://pinky.futuremind.com/~dpaluch/test35/"
+    
+    required override init(
+        configuration: URLSessionConfiguration = URLSessionConfiguration.default,
+        delegate: SessionDelegate = SessionDelegate(),
+        serverTrustPolicyManager: ServerTrustPolicyManager? = nil) {
+        
+        super.init(configuration: configuration, delegate: delegate, serverTrustPolicyManager: serverTrustPolicyManager)
+    }
 }

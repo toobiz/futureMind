@@ -24,7 +24,7 @@ class Item: ImmutableMappable {
     let description: String?
     let orderId: Int?
     let modificationDate: String?
-    let imageUrl: URL?
+    let imageUrl: String?
     
     required init(map: Map) throws {
         title = try? map.value("title")

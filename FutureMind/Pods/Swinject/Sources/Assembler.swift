@@ -6,18 +6,17 @@
 //  Copyright © 2015 Swinject Contributors. All rights reserved.
 //
 
+/// The `Assembler` provides a means to build a container via `Assembly` instances.
+public final class Assembler {
 
-/// The `Assembler` provides a means to build a container via `AssemblyType` instances.
-public class Assembler {
-    
     /// the container that each assembly will build its `Service` definitions into
     private let container: Container
-    
+
     /// expose the container as a resolver so `Service` registration only happens within an assembly
-    public var resolver: ResolverType {
+    public var resolver: Resolver {
         return container
     }
-    
+
     /// Will create an empty `Assembler`
     ///
     /// - parameter container: the baseline container
@@ -25,7 +24,7 @@ public class Assembler {
     public init(container: Container? = Container()) {
         self.container = container!
     }
-    
+
     /// Will create an empty `Assembler`
     ///
     /// - parameter parentAssembler: the baseline assembler
@@ -33,41 +32,53 @@ public class Assembler {
     public init(parentAssembler: Assembler?) {
         container = Container(parent: parentAssembler?.container)
     }
-    
-    /// Will create a new `Assembler` with the given `AssemblyType` instances to build a `Container`
+
+    /// Will create a new `Assembler` with the given `Assembly` instances to build a `Container`
     ///
     /// - parameter assemblies:         the list of assemblies to build the container from
-    /// - parameter propertyLoaders:    a list of property loaders to apply to the container
     /// - parameter container:          the baseline container
     ///
-    public init(assemblies: [AssemblyType], propertyLoaders: [PropertyLoaderType]? = nil, container: Container? = Container()) throws {
-        self.container = container!
-        if let propertyLoaders = propertyLoaders {
-            for propertyLoader in propertyLoaders {
-                try self.container.applyPropertyLoader(propertyLoader)
-            }
+    @available(*, deprecated, message: "Use not throwing alternative: init(_:, container:)")
+    public convenience init(assemblies: [Assembly], container: Container? = Container()) throws {
+        if let container = container {
+            self.init(assemblies, container: container)
+        } else {
+            self.init(assemblies)
         }
-        runAssemblies(assemblies)
     }
-    
-    /// Will create a new `Assembler` with the given `AssemblyType` instances to build a `Container`
+
+    /// Will create a new `Assembler` with the given `Assembly` instances to build a `Container`
+    ///
+    /// - parameter assemblies:         the list of assemblies to build the container from
+    /// - parameter container:          the baseline container
+    ///
+    public init(_ assemblies: [Assembly], container: Container = Container()) {
+        self.container = container
+        run(assemblies: assemblies)
+    }
+
+    /// Will create a new `Assembler` with the given `Assembly` instances to build a `Container`
     ///
     /// - parameter assemblies:         the list of assemblies to build the container from
     /// - parameter parentAssembler:    the baseline assembler
-    /// - parameter propertyLoaders:    a list of property loaders to apply to the container
     ///
-    public init(assemblies: [AssemblyType], parentAssembler: Assembler?, propertyLoaders: [PropertyLoaderType]? = nil) throws {
-        container = Container(parent: parentAssembler?.container)
-        if let propertyLoaders = propertyLoaders {
-            for propertyLoader in propertyLoaders {
-                try self.container.applyPropertyLoader(propertyLoader)
-            }
-        }
-        runAssemblies(assemblies)
+    @available(*, deprecated, message: "Use not throwing alternative: init(_:, parent:)")
+    public convenience init(assemblies: [Assembly], parentAssembler: Assembler?) throws {
+        self.init(_: assemblies, parent: parentAssembler)
     }
-    
-    /// Will apply the assembly to the container. This is useful if you want to lazy load an assembly into the assembler's
-    /// container.
+
+    /// Will create a new `Assembler` with the given `Assembly` instances to build a `Container`
+    ///
+    /// - parameter assemblies: the list of assemblies to build the container from
+    /// - parameter parent:     the baseline assembler
+    ///
+    public init(_ assemblies: [Assembly], parent: Assembler?) {
+        container = Container(parent: parent?.container)
+        run(assemblies: assemblies)
+    }
+
+    /// Will apply the assembly to the container. This is useful if you want to lazy load an assembly into the 
+    /// assembler's container.
     ///
     /// If this assembly type is load aware, the loaded hook will be invoked right after the container has assembled
     /// since after each call to `addAssembly` the container is fully loaded in its current state. If you wish to
@@ -75,44 +86,33 @@ public class Assembler {
     ///
     /// - parameter assembly: the assembly to apply to the container
     ///
-    public func applyAssembly(assembly: AssemblyType) {
-        runAssemblies([assembly])
+    public func apply(assembly: Assembly) {
+        run(assemblies: [assembly])
     }
-    
-    /// Will apply the assemblies to the container. This is useful if you want to lazy load several assemblies into the assembler's
-    /// container
+
+    /// Will apply the assemblies to the container. This is useful if you want to lazy load several assemblies into the 
+    /// assembler's container
     ///
     /// If this assembly type is load aware, the loaded hook will be invoked right after the container has assembled
     /// since after each call to `addAssembly` the container is fully loaded in its current state.
     ///
     /// - parameter assemblies: the assemblies to apply to the container
     ///
-    public func applyAssemblies(assemblies: [AssemblyType]) {
-        runAssemblies(assemblies)
+    public func apply(assemblies: [Assembly]) {
+        run(assemblies: assemblies)
     }
-    
-    /// Will apply a property loader to the container. This is useful if you want to lazy load your assemblies or build
-    /// your assembler manually
-    ///
-    /// - parameter propertyLoader: the property loader to apply to the assembler's container
-    ///
-    /// - throws: PropertyLoaderError
-    ///
-    public func applyPropertyLoader(propertyLoader: PropertyLoaderType) throws {
-        try self.container.applyPropertyLoader(propertyLoader)
-    }
-    
+
     // MARK: Private
-    
-    private func runAssemblies(assemblies: [AssemblyType]) {
+
+    private func run(assemblies: [Assembly]) {
         // build the container from each assembly
         for assembly in assemblies {
-            assembly.assemble(self.container)
+            assembly.assemble(container: self.container)
         }
-        
+
         // inform all of the assemblies that the container is loaded
         for assembly in assemblies {
-            assembly.loaded(self.resolver)
+            assembly.loaded(resolver: self.resolver)
         }
     }
 }

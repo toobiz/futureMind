@@ -7,5 +7,8 @@ target 'FutureMind' do
 	pod 'ObjectMapper', '~> 3.2'
 	pod 'RxSwift',    '~> 4.0'
     	pod 'RxCocoa',    '~> 4.0'
-	pod 'Swinject', '~> 1.1.4'
+  	pod 'Swinject', '~> 2.1.0'
+  	pod 'SwinjectStoryboard', '~> 1.1.2'
+	pod 'AlamofireNetworkActivityLogger', '~> 2.0'
+	pod 'AlamofireObjectMapper', '~> 5.0'
 end

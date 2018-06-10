@@ -19,6 +19,7 @@
 		27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */; };
 		27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */; };
 		27EE3DF420CCA5FA0012E5FD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */; };
+		27EE3DF620CCABB70012E5FD /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF520CCABB70012E5FD /* MainAssembly.swift */; };
 		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		27EE3DEF20CC9EB90012E5FD /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		27EE3DF120CCA1D20012E5FD /* APIRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryInterface.swift; sourceTree = "<group>"; };
 		27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		27EE3DF520CCABB70012E5FD /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				27EE3DE520CC94820012E5FD /* API */,
 				27EE3DEE20CC9E810012E5FD /* Repository */,
 				27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */,
+				27EE3DF520CCABB70012E5FD /* MainAssembly.swift */,
 				27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */,
 				27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */,
 				27EE3DD420CC8B2C0012E5FD /* Main.storyboard */,
@@ -218,18 +221,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -261,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EE3DF620CCABB70012E5FD /* MainAssembly.swift in Sources */,
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,
 				27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */,

@@ -7,16 +7,17 @@
 //
 
 import Alamofire
+import AlamofireObjectMapper
 
 protocol APIService {
     
-    @discardableResult func getData(_ completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
+    @discardableResult func getData(_ completion: @escaping ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest
 }
 
 extension APISessionManager: APIService {
     
-    @discardableResult func getData(_ completion: ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
-        return request(baseUrl, method: .get, encoding: JSONEncoding.default)
+    @discardableResult func getData(_ completion: @escaping ((DataResponse<GetDataResponse>) -> Void)) -> DataRequest {
+        return request(baseUrl, method: .get, encoding: JSONEncoding.default).responseObject(completionHandler: completion)
     }
     
     
