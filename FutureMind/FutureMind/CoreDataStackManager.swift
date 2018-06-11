@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 private let SQLITE_FILE_NAME = "FutureMind.sqlite"
+
 class CoreDataStackManager {
     
     
