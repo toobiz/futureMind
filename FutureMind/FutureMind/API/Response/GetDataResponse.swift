@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import CoreData
 
 class GetDataResponse: ImmutableMappable {
     
@@ -18,72 +19,32 @@ class GetDataResponse: ImmutableMappable {
     }
 }
 
-class Item: ImmutableMappable {
-    
-    let title: String?
-    let description: String?
-    let link: String?
-    let orderId: Int?
-    let modificationDate: String?
-    let imageUrl: String?
-    var image: UIImage?
+@objc (Item)
+class Item: NSManagedObject, ImmutableMappable {
+    @NSManaged var title: String?
+    @NSManaged var desc: String?
+    @NSManaged var link: String?
+    @NSManaged var orderId: NSNumber?
+    @NSManaged var modificationDate: String?
+    @NSManaged var imageUrl: String?
+    @NSManaged var image: UIImage?
+        
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+    }
     
     required init(map: Map) throws {
+        let context = CoreDataStackManager.sharedInstance().managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Item", in: context)
+        super.init(entity: entity!, insertInto: context)
+        
         title = try? map.value("title")
-        description = try? map.value("description", using: ImmutableMappableTransformation.removeUrl())
+        desc = try? map.value("description", using: ImmutableMappableTransformation.removeUrl())
         link = try? map.value("description", using: ImmutableMappableTransformation.extractUrl())
         orderId = try? map.value("orderId")
         modificationDate = try? map.value("modificationDate")
         imageUrl = try? map.value("image_url")
-        image = try? map.value("image")
-    }
-    
-    struct ImmutableMappableTransformation {
-        
-        static func removeUrl() -> TransformOf<String, Any> {
-            return TransformOf<String, Any>(fromJSON: { (value: Any?) -> String? in
-                if let value = value as? String {
-                    var string = String()
-                    if let index = value.range(of: "http")?.lowerBound {
-                        let substring = value[..<index]
-                        string = String(substring).condenseWhitespace()
-                    }
-                    return string
-                }
-                return nil
-            }, toJSON: { (value: String?) -> String? in
-                if let value = value {
-                    return value
-                }
-                return nil
-            })
-        }
-        
-        static func extractUrl() -> TransformOf<String, Any> {
-            return TransformOf<String, Any>(fromJSON: { (value: Any?) -> String? in
-                if let value = value as? String {
-                    var string = String()
-                    if let index = value.range(of: "http")?.lowerBound {
-                        let substring = value[index..<value.endIndex]
-                        string = String(substring)
-                        print(string)
-                    }
-                    return string
-                }
-                return nil
-            }, toJSON: { (value: String?) -> String? in
-                if let value = value {
-                    return value
-                }
-                return nil
-            })
-        }
-    }
-}
 
-extension String {
-    func condenseWhitespace() -> String {
-        let components = self.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
-        return components.filter { !$0.isEmpty }.joined(separator: " ")
+        CoreDataStackManager.sharedInstance().saveContext()
     }
 }
