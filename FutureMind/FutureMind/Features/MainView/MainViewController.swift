@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
-
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -42,9 +41,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if let prototypeCell = cell as? PrototypeCell {
             if viewModel.items.count > 0 {
                 let item = viewModel.items[indexPath.row]
-                prototypeCell.titleLabel.text = item.title
-                prototypeCell.descriptionLabel.text = item.desc
-                prototypeCell.dateLabel.text = item.modificationDate
+                let cellViewModel = PrototypeCellViewModel(withItem: item)
+                cellViewModel.repository = viewModel.repository
+                prototypeCell.setup(withViewModel: cellViewModel)
             }
         }
         return cell
