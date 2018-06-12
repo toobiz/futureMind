@@ -1,5 +1,5 @@
 //
-//  ImmutableMappableTransformations.swift
+//  ImmutableMappableTransformation.swift
 //  FutureMind
 //
 //  Created by Michal Tubis on 12.06.2018.

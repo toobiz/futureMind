@@ -13,7 +13,7 @@ class MainViewModel {
     
     var repository: APIRepositoryInterface
     let disposeBag = DisposeBag()
-    var items: [Item]?
+    var items = [Item]()
     let loadingSuccess = PublishSubject<Bool>()
     
     init(repository: APIRepositoryInterface) {
@@ -22,8 +22,8 @@ class MainViewModel {
     
     func getData() {
         repository.getData().subscribe(onNext: { [unowned self] response in
-            
-            self.items = response.itemsList
+            guard let data = response.itemsList else { return }
+            self.items = data
             self.loadingSuccess.onNext(true)
 
             }, onError: { [unowned self] error in

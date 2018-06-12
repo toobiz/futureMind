@@ -22,7 +22,8 @@
 		27EE3DF620CCABB70012E5FD /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DF520CCABB70012E5FD /* MainAssembly.swift */; };
 		27EE3DFC20CEEDDE0012E5FD /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DFB20CEEDDE0012E5FD /* CoreDataStackManager.swift */; };
 		27EE3E0120CF32C90012E5FD /* String+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3E0020CF32C90012E5FD /* String+Whitespaces.swift */; };
-		27EE3E0320CF349D0012E5FD /* ImmutableMappableTransformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformations.swift */; };
+		27EE3E0320CF349D0012E5FD /* ImmutableMappableTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformation.swift */; };
+		27EE3E0620D02A950012E5FD /* PrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3E0520D02A950012E5FD /* PrototypeCell.swift */; };
 		DA783FEFF7CC77058B207042 /* Pods_FutureMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,8 @@
 		27EE3DF520CCABB70012E5FD /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		27EE3DFB20CEEDDE0012E5FD /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		27EE3E0020CF32C90012E5FD /* String+Whitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespaces.swift"; sourceTree = "<group>"; };
-		27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableMappableTransformations.swift; sourceTree = "<group>"; };
+		27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableMappableTransformation.swift; sourceTree = "<group>"; };
+		27EE3E0520D02A950012E5FD /* PrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeCell.swift; sourceTree = "<group>"; };
 		3975125C5600EF2DEB6D39E0 /* Pods-FutureMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				27EE3DF520CCABB70012E5FD /* MainAssembly.swift */,
 				27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */,
 				27EE3DF320CCA5FA0012E5FD /* MainViewModel.swift */,
+				27EE3E0520D02A950012E5FD /* PrototypeCell.swift */,
 				27EE3DD420CC8B2C0012E5FD /* Main.storyboard */,
 			);
 			path = MainView;
@@ -180,7 +183,7 @@
 		27EE3E0420CF34F30012E5FD /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformations.swift */,
+				27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformation.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -318,11 +321,12 @@
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DFC20CEEDDE0012E5FD /* CoreDataStackManager.swift in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,
-				27EE3E0320CF349D0012E5FD /* ImmutableMappableTransformations.swift in Sources */,
+				27EE3E0320CF349D0012E5FD /* ImmutableMappableTransformation.swift in Sources */,
 				27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */,
 				27EE3DD320CC8B2C0012E5FD /* MainViewController.swift in Sources */,
 				27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */,
 				27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */,
+				27EE3E0620D02A950012E5FD /* PrototypeCell.swift in Sources */,
 				27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */,
 				27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */,
 				27EE3DF420CCA5FA0012E5FD /* MainViewModel.swift in Sources */,

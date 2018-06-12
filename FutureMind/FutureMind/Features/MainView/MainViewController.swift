@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel!
     let disposeBag = DisposeBag()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getData()
@@ -23,8 +25,33 @@ class MainViewController: UIViewController {
     func setupBindings() {
         viewModel.loadingSuccess.subscribe(onNext: { [weak self] _ in
             print("Loading success")
+            self?.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
 
+}
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PrototypeCell.reuseIdentifier, for: indexPath)
+        
+        if let prototypeCell = cell as? PrototypeCell {
+            if viewModel.items.count > 0 {
+                let item = viewModel.items[indexPath.row]
+                prototypeCell.titleLabel.text = item.title
+                prototypeCell.descriptionLabel.text = item.desc
+                prototypeCell.dateLabel.text = item.modificationDate
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
