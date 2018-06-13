@@ -44,31 +44,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 let cellViewModel = PrototypeCellViewModel(withItem: item)
                 cellViewModel.repository = viewModel.repository
                 
-                prototypeCell.titleLabel.text = item.title
-                prototypeCell.descriptionLabel.text = item.desc
-                prototypeCell.dateLabel.text = item.modificationDate
+                prototypeCell.setup(withViewModel: cellViewModel)
                 
-//                prototypeCell.setup(withViewModel: cellViewModel)
-                
-                if item.image != nil {
-                    prototypeCell.itemImage.image = item.image
-                    print("Image retrieved from cache")
-                } else {
-                    prototypeCell.itemImage.image = #imageLiteral(resourceName: "placeholder")
-                    viewModel.repository.getImage(imageUrl: (item.imageUrl)!).subscribe(onNext: { image in
-                        if item.image != image {
-                            item.image = image
-                        }
-                        DispatchQueue.main.async(execute: {
-                            if prototypeCell.itemImage.image == #imageLiteral(resourceName: "placeholder") {
-                                prototypeCell.itemImage.image = image
-                            }
-                        })
-                    }, onError: { [unowned self] error in
-                        prototypeCell.itemImage.image = #imageLiteral(resourceName: "placeholder")
-                    }).disposed(by: disposeBag)
-                    
-                }
+//                if item.image != nil {
+//                    prototypeCell.itemImage.image = item.image
+//                    print("Image retrieved from cache")
+//                } else {
+//                    prototypeCell.itemImage.image = #imageLiteral(resourceName: "placeholder")
+//                    viewModel.repository.getImage(imageUrl: (item.imageUrl)!).subscribe(onNext: { image in
+//                        if item.image != image {
+//                            item.image = image
+//                        }
+//                        DispatchQueue.main.async(execute: {
+//                            if prototypeCell.itemImage.image == #imageLiteral(resourceName: "placeholder") {
+//                                prototypeCell.itemImage.image = image
+//                            }
+//                        })
+//                    }, onError: { [unowned self] error in
+//                        prototypeCell.itemImage.image = #imageLiteral(resourceName: "placeholder")
+//                    }).disposed(by: disposeBag)
+//
+//                }
             }
         }
         return cell

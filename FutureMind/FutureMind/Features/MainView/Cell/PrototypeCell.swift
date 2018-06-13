@@ -21,34 +21,29 @@ class PrototypeCell: UITableViewCell {
     @IBOutlet weak var itemImage: UIImageView!
     
     func setup(withViewModel viewModel: PrototypeCellViewModel) {
-//        self.viewModel = viewModel
-//        self.titleLabel.text = viewModel.item?.title
-//        self.descriptionLabel.text = viewModel.item?.desc
-//        self.dateLabel.text = viewModel.item?.modificationDate
+        self.viewModel = viewModel
+        self.titleLabel.text = viewModel.item?.title
+        self.descriptionLabel.text = viewModel.item?.desc
+        self.dateLabel.text = viewModel.item?.modificationDate
         
 //        setupBinding()
 //        viewModel.setImage()
         
-        if viewModel.item?.orderId == nil {
-//            self.loadingSuccess.onNext(nil)
-            self.itemImage.image = nil
-            print("Image not available")
-        } else if viewModel.item?.image != nil {
-//            loadingSuccess.onNext(item?.image)
+        if viewModel.item?.image != nil {
             self.itemImage.image = viewModel.item?.image
             print("Image retrieved from cache")
         } else {
-//            self.loadingSuccess.onNext(UIImage(named: "placeholder"))
-            self.itemImage.image = UIImage(named: "placeholder")
+            self.itemImage.image = #imageLiteral(resourceName: "placeholder")
             viewModel.repository.getImage(imageUrl: (viewModel.item?.imageUrl)!).subscribe(onNext: { image in
-                self.itemImage.image = image
-                self.setNeedsLayout()
-//                self.loadingSuccess.onNext(image)
+                if self.viewModel.item?.image == nil {
+                    self.viewModel.item!.image = image
+                }
+                DispatchQueue.main.async(execute: {
+                        self.itemImage.image = image
+                })
             }, onError: { [unowned self] error in
-//                self.loadingSuccess.onNext(UIImage(named: "placeholder"))
-                self.itemImage.image = UIImage(named: "placeholder")
+                self.itemImage.image = #imageLiteral(resourceName: "placeholder")
             }).disposed(by: disposeBag)
-            
         }
     }
     
