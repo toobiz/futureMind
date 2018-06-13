@@ -26,31 +26,17 @@ class PrototypeCell: UITableViewCell {
         self.descriptionLabel.text = viewModel.item?.desc
         self.dateLabel.text = viewModel.item?.modificationDate
         
-//        setupBinding()
-//        viewModel.setImage()
-        
-        if viewModel.item?.image != nil {
-            self.itemImage.image = viewModel.item?.image
-            print("Image retrieved from cache")
-        } else {
-            self.itemImage.image = #imageLiteral(resourceName: "placeholder")
-            viewModel.repository.getImage(imageUrl: (viewModel.item?.imageUrl)!).subscribe(onNext: { image in
-                if self.viewModel.item?.image == nil {
-                    self.viewModel.item!.image = image
-                }
-                DispatchQueue.main.async(execute: {
-                        self.itemImage.image = image
-                })
-            }, onError: { [unowned self] error in
-                self.itemImage.image = #imageLiteral(resourceName: "placeholder")
-            }).disposed(by: disposeBag)
-        }
+        setupBinding()
+        viewModel.setImage()
     }
     
     func setupBinding() {
+        viewModel.image.asObservable().subscribe(onNext: { [unowned self] image in
+            self.itemImage.image = image
+        }).disposed(by: disposeBag)
+        
         viewModel.loadingSuccess.subscribe(onNext: { [unowned self] image in
             self.itemImage.image = image
-            self.setNeedsLayout()
         }).disposed(by: disposeBag)
     }
 }
