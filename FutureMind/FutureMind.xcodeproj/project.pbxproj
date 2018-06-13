@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B397D620D199E500FB8855 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B397D520D199E500FB8855 /* ImageCache.swift */; };
 		27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */; };
 		27EE3DD320CC8B2C0012E5FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */; };
 		27EE3DD620CC8B2C0012E5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EE3DD420CC8B2C0012E5FD /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.release.xcconfig"; sourceTree = "<group>"; };
+		27B397D520D199E500FB8855 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		27EE3DCD20CC8B2C0012E5FD /* FutureMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */,
+				27B397D520D199E500FB8855 /* ImageCache.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				27EE3DF620CCABB70012E5FD /* MainAssembly.swift in Sources */,
 				27EE3E0120CF32C90012E5FD /* String+Whitespaces.swift in Sources */,
+				27B397D620D199E500FB8855 /* ImageCache.swift in Sources */,
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DFC20CEEDDE0012E5FD /* CoreDataStackManager.swift in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,

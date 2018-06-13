@@ -25,7 +25,6 @@ class MainViewModel {
             guard let data = response.itemsList else { return }
             self.items = data
             self.loadingSuccess.onNext(true)
-
             }, onError: { [unowned self] error in
                 
         }).disposed(by: disposeBag)

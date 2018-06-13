@@ -27,8 +27,7 @@ class Item: NSManagedObject, ImmutableMappable {
     @NSManaged var orderId: NSNumber?
     @NSManaged var modificationDate: String?
     @NSManaged var imageUrl: String?
-    @NSManaged var image: UIImage?
-        
+    
     override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
@@ -46,5 +45,20 @@ class Item: NSManagedObject, ImmutableMappable {
         imageUrl = try? map.value("image_url")
 
         CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    var image: UIImage? {
+        
+        get {
+            let fileName = desc
+            return ImageCache.Caches.imageCache.imageWithIdentifier(fileName)
+        }
+        
+        set {
+            if desc != nil {
+                let fileName = desc
+                ImageCache.Caches.imageCache.storeImage(newValue, withIdentifier: fileName!)
+            }
+        }
     }
 }
