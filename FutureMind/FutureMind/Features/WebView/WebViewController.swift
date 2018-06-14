@@ -31,9 +31,7 @@ class WebViewController: UIViewController {
     }
     
     func setupWebView() {
-//        webView = WKWebView(frame: webViewContainer.bounds, configuration: WKWebViewConfiguration())
         webView.navigationDelegate = self
-//        webViewContainer.addSubview(webView)
         webView.scrollView.clipsToBounds = false
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }

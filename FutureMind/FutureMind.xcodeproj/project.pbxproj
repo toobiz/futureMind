@@ -142,7 +142,7 @@
 				27EE3DE620CC949A0012E5FD /* APIService.swift */,
 				27EE3DEB20CC9BC00012E5FD /* Core */,
 				27EE3DE820CC95BA0012E5FD /* Response */,
-				27EE3E0420CF34F30012E5FD /* Internal */,
+				27EE3E0420CF34F30012E5FD /* Helper */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -151,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				27EE3DE920CC95DA0012E5FD /* GetDataResponse.swift */,
-				27B397D520D199E500FB8855 /* ImageCache.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -202,12 +201,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		27EE3E0420CF34F30012E5FD /* Internal */ = {
+		27EE3E0420CF34F30012E5FD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				27EE3E0220CF349D0012E5FD /* ImmutableMappableTransformation.swift */,
+				27B397D520D199E500FB8855 /* ImageCache.swift */,
 			);
-			path = Internal;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		27EE3E0720D06C240012E5FD /* Cell */ = {
