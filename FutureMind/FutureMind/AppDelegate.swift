@@ -53,6 +53,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(APISessionManager.self) { _ in
             return APISessionManager()
         }
+        WebViewAssembly().assemble(container: SwinjectStoryboard.defaultContainer)
     }
 }
 

@@ -15,6 +15,7 @@ class MainViewModel {
     let disposeBag = DisposeBag()
     var items = [Item]()
     let loadingSuccess = PublishSubject<Bool>()
+    let webViewIdentifier = "WebViewController"
     
     init(repository: APIRepositoryInterface) {
         self.repository = repository

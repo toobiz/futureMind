@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275E58CA20D2E50C007D932A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58C920D2E50C007D932A /* WebViewController.swift */; };
+		275E58CC20D2E54C007D932A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58CB20D2E54C007D932A /* WebViewModel.swift */; };
+		275E58CE20D2F305007D932A /* WebViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58CD20D2F305007D932A /* WebViewAssembly.swift */; };
 		27B397D620D199E500FB8855 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B397D520D199E500FB8855 /* ImageCache.swift */; };
 		27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD020CC8B2C0012E5FD /* AppDelegate.swift */; };
 		27EE3DD320CC8B2C0012E5FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE3DD220CC8B2C0012E5FD /* MainViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275E58C920D2E50C007D932A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		275E58CB20D2E54C007D932A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		275E58CD20D2F305007D932A /* WebViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewAssembly.swift; sourceTree = "<group>"; };
 		279555A98BAC0BF514AD0440 /* Pods-FutureMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-FutureMind/Pods-FutureMind.release.xcconfig"; sourceTree = "<group>"; };
 		27B397D520D199E500FB8855 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		27EE3DCD20CC8B2C0012E5FD /* FutureMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +89,16 @@
 				AE4B12423B1A3952B3F0984C /* Pods_FutureMind.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		275E58C820D2E4BE007D932A /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				275E58CD20D2F305007D932A /* WebViewAssembly.swift */,
+				275E58C920D2E50C007D932A /* WebViewController.swift */,
+				275E58CB20D2E54C007D932A /* WebViewModel.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		27EE3DC420CC8B2C0012E5FD = {
@@ -161,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				27EE3DFE20CF30FC0012E5FD /* MainView */,
+				275E58C820D2E4BE007D932A /* WebView */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -331,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EE3DF620CCABB70012E5FD /* MainAssembly.swift in Sources */,
+				275E58CC20D2E54C007D932A /* WebViewModel.swift in Sources */,
 				27EE3E0120CF32C90012E5FD /* String+Whitespaces.swift in Sources */,
 				27B397D620D199E500FB8855 /* ImageCache.swift in Sources */,
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
@@ -342,7 +360,9 @@
 				27EE3DF020CC9EB90012E5FD /* APIRepository.swift in Sources */,
 				27EE3E0920D06C580012E5FD /* PrototypeCellViewModel.swift in Sources */,
 				27EE3DD120CC8B2C0012E5FD /* AppDelegate.swift in Sources */,
+				275E58CA20D2E50C007D932A /* WebViewController.swift in Sources */,
 				27EE3E0620D02A950012E5FD /* PrototypeCell.swift in Sources */,
+				275E58CE20D2F305007D932A /* WebViewAssembly.swift in Sources */,
 				27EE3DEA20CC95DA0012E5FD /* GetDataResponse.swift in Sources */,
 				27EE3DED20CC9BD90012E5FD /* APISessionManager.swift in Sources */,
 				27EE3DF420CCA5FA0012E5FD /* MainViewModel.swift in Sources */,
