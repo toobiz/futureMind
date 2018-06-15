@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275C819720D480F6006D789F /* UIViewController+SVProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C819620D480F6006D789F /* UIViewController+SVProgressHUD.swift */; };
 		275E58CA20D2E50C007D932A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58C920D2E50C007D932A /* WebViewController.swift */; };
 		275E58CC20D2E54C007D932A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58CB20D2E54C007D932A /* WebViewModel.swift */; };
 		275E58CE20D2F305007D932A /* WebViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E58CD20D2F305007D932A /* WebViewAssembly.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275C819620D480F6006D789F /* UIViewController+SVProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SVProgressHUD.swift"; sourceTree = "<group>"; };
 		275E58C920D2E50C007D932A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		275E58CB20D2E54C007D932A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		275E58CD20D2F305007D932A /* WebViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewAssembly.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				27EE3E0020CF32C90012E5FD /* String+Whitespaces.swift */,
+				275C819620D480F6006D789F /* UIViewController+SVProgressHUD.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				27B397D620D199E500FB8855 /* ImageCache.swift in Sources */,
 				27EE3DD920CC8B2C0012E5FD /* FutureMind.xcdatamodeld in Sources */,
 				27EE3DFC20CEEDDE0012E5FD /* CoreDataStackManager.swift in Sources */,
+				275C819720D480F6006D789F /* UIViewController+SVProgressHUD.swift in Sources */,
 				27EE3DE720CC949A0012E5FD /* APIService.swift in Sources */,
 				27EE3E0320CF349D0012E5FD /* ImmutableMappableTransformation.swift in Sources */,
 				27EE3DF220CCA1D20012E5FD /* APIRepositoryInterface.swift in Sources */,
