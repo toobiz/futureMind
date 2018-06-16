@@ -12,7 +12,7 @@ import CoreData
 
 class MainViewModel {
     
-    var repository: APIRepositoryInterface
+    let interactor: MainInteractor!
     let disposeBag = DisposeBag()
     var items = [Item]()
     let isLoading = Variable<Bool>(false)
@@ -24,8 +24,8 @@ class MainViewModel {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }()
     
-    init(repository: APIRepositoryInterface) {
-        self.repository = repository
+    init(interactor: MainInteractor) {
+        self.interactor = interactor
     }
     
     func getData() {
@@ -34,7 +34,7 @@ class MainViewModel {
         
         if items.count == 0 {
             isLoading.value = true
-            repository.getData().subscribe(onNext: { [unowned self] response in
+            interactor.getData().subscribe(onNext: { [unowned self] response in
                 guard let data = response.itemsList else { return }
                 self.items = data
                 self.items.sort(by: {Int(truncating: $0.orderId!) < Int(truncating: $1.orderId!) })
@@ -47,9 +47,9 @@ class MainViewModel {
     }
     
     func refreshData() {
-        repository.getData().subscribe(onNext: { [unowned self] response in
+        self.clearSavedData()
+        interactor.getData().subscribe(onNext: { [unowned self] response in
             guard let data = response.itemsList else { return }
-            self.clearSavedData()
             self.items = data
             self.items.sort(by: {Int(truncating: $0.orderId!) < Int(truncating: $1.orderId!) })
             self.loadingSuccess.onNext(true)

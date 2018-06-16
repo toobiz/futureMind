@@ -11,7 +11,7 @@ import RxSwift
 
 class PrototypeCellViewModel {
     
-    var repository: APIRepositoryInterface!
+    var interactor: MainInteractor!
     let disposeBag = DisposeBag()
     var item: Item?
     var image = Variable<UIImage?>(nil)
@@ -28,7 +28,7 @@ class PrototypeCellViewModel {
         if item?.image != nil {
             image.value = (item?.image)!
         } else {
-            repository.getImage(imageUrl: (item?.imageUrl)!).subscribe(onNext: { image in
+            interactor.getImage(imageUrl: (item?.imageUrl)!).subscribe(onNext: { image in
                 if self.item?.image == nil {
                     self.item?.image = image
                     self.image.value = image

@@ -19,9 +19,13 @@ class MainAssembly: Assembly {
         }
         
         container.register(MainViewModel.self) { r in
-            return MainViewModel(repository: r.resolve(APIRepositoryInterface.self)!)
+            return MainViewModel(interactor: r.resolve(MainInteractor.self)!)
         }
         
+        container.register(MainInteractor.self) { r in
+            return MainInteractor(repository: r.resolve(APIRepositoryInterface.self)!)
+        }
+                
         container.register(APIRepositoryInterface.self) { r in
             return APIRepository(service: r.resolve(APIService.self)!)
         }

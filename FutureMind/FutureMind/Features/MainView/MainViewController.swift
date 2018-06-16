@@ -57,7 +57,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             if viewModel.items.count > 0 {
                 let item = viewModel.items[indexPath.row]
                 let cellViewModel = PrototypeCellViewModel(withItem: item)
-                cellViewModel.repository = viewModel.repository
+                cellViewModel.interactor = viewModel.interactor
                 prototypeCell.setup(withViewModel: cellViewModel)
             }
         }
