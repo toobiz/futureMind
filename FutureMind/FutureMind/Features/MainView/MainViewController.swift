@@ -13,18 +13,30 @@ class MainViewController: UIViewController {
     
     var viewModel: MainViewModel!
     let disposeBag = DisposeBag()
+    let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getData()
+        setupRefreshControl()
+        viewModel.getData(withSpinner: true)
         setupBindings()
+    }
+    
+    func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshData() {
+        viewModel.getData(withSpinner: false)
     }
     
     func setupBindings() {
         viewModel.loadingSuccess.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }).disposed(by: disposeBag)
         
         viewModel.isLoading.asObservable().subscribe(onNext: { [unowned self]  value in

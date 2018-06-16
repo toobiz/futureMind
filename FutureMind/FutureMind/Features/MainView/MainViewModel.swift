@@ -22,8 +22,8 @@ class MainViewModel {
         self.repository = repository
     }
     
-    func getData() {
-        isLoading.value = true
+    func getData(withSpinner spinner: Bool) {
+        isLoading.value = spinner
         repository.getData().subscribe(onNext: { [unowned self] response in
             guard let data = response.itemsList else { return }
             self.items = data
