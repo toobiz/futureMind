@@ -26,6 +26,10 @@ class MainViewController: UIViewController {
         viewModel.loadingSuccess.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.asObservable().subscribe(onNext: { [unowned self]  value in
+            self.progressHUDVisible = value
+        }).disposed(by: disposeBag)
     }
 }
 

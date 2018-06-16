@@ -31,22 +31,8 @@ class WebViewController: UIViewController {
     }
     
     func setupWebView() {
-        webView.navigationDelegate = self
         webView.scrollView.clipsToBounds = false
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
 
-extension WebViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-    }
-    
-    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        
-    }
-    
-    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        
-    }
-}
