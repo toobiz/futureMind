@@ -18,6 +18,7 @@ class MainViewModel {
     let isLoading = Variable<Bool>(false)
     let loadingSuccess = PublishSubject<Bool>()
     let webViewIdentifier = "WebViewController"
+    let entityName = "Item"
     
     lazy var sharedContext: NSManagedObjectContext =  {
         return CoreDataStackManager.sharedInstance().managedObjectContext
@@ -56,7 +57,7 @@ class MainViewModel {
     }
     
     func getSavedData() -> [Item] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do {
             return try sharedContext.fetch(fetchRequest) as! [Item]
         } catch let error as NSError {
@@ -67,7 +68,7 @@ class MainViewModel {
     
     func clearSavedData() {
         
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
             try sharedContext.execute(deleteRequest)
