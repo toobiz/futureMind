@@ -33,10 +33,7 @@ class PrototypeCell: UITableViewCell {
     func setupBinding() {
         viewModel.image.asObservable().subscribe(onNext: { [unowned self] image in
             self.itemImage.image = image
-        }).disposed(by: disposeBag)
-        
-        viewModel.loadingSuccess.subscribe(onNext: { [unowned self] image in
-            self.itemImage.image = image
+            self.setNeedsLayout()
         }).disposed(by: disposeBag)
     }
 }

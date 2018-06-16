@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshControl()
-        viewModel.getData(withSpinner: true)
+        viewModel.getData()
         setupBindings()
     }
     
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func refreshData() {
-        viewModel.getData(withSpinner: false)
+        viewModel.refreshData()
     }
     
     func setupBindings() {

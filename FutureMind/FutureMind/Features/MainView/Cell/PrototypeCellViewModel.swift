@@ -11,7 +11,6 @@ import RxSwift
 
 class PrototypeCellViewModel {
     
-    let loadingSuccess = PublishSubject<UIImage?>()
     var repository: APIRepositoryInterface!
     let disposeBag = DisposeBag()
     var item: Item?
